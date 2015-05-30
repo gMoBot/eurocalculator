@@ -22,8 +22,8 @@ public class Greedy {
         greedy.GetChange();
 //        new Greedy().GetChange();
     }
-    private final ChangeCalculator changeCalculator;
-    public Greedy(ChangeCalculator changeCalculator) {this.changeCalculator = changeCalculator;}
+    private final ChangeCalculatorInterface changeCalculatorInterface;
+    public Greedy(ChangeCalculatorInterface changeCalculatorInterface) {this.changeCalculatorInterface = changeCalculatorInterface;}
 
     // Solicit and validate user input
     public void GetChange() {
@@ -54,12 +54,12 @@ public class Greedy {
         ApplicationContext context = new ClassPathXmlApplicationContext("application.xml");
 
         if (currencyType.matches("[\\$]")) {
-            changeCalculator.calculateChange(convertedChange);
+            changeCalculatorInterface.calculateChange(convertedChange);
 //            ChangeCalculator uSChange = (ChangeCalculator) context.getBean("dollars");
 //            uSChange.calculateChange(convertedChange);
 
         } else if (currencyType.matches("[\\€]")) {
-            changeCalculator.euroCalculateChange(convertedChange);
+            changeCalculatorInterface.euroCalculateChange(convertedChange);
 //            ChangeCalculator eUChange = (ChangeCalculator) context.getBean("euros");
 //            eUChange.euroCalculateChange(convertedChange);
         }
