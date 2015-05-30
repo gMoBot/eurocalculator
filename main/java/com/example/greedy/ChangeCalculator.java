@@ -3,9 +3,17 @@ package com.example.greedy;
 /**
  * Created by garrettcoggon on 5/20/15.
  */
-public class ChangeCalculator {
+public class ChangeCalculator implements ChangeCalculatorInterface {
+    public ChangeCalculator(){}
+    private ChangeCalculator changeCalculator;
+    public ChangeCalculator getInstance(){
+        if (changeCalculator == null){
+            changeCalculator = new ChangeCalculator();
+        }
+        return changeCalculator;
+    }
 
-    public static String CalculateChange(int convertedChange) {
+    public String calculateChange(int convertedChange) {
         // Determine how many times the given value is divisible by 25 etc
         // initialize variables
         int remainder;
@@ -42,7 +50,7 @@ public class ChangeCalculator {
 
         return changeNeeded;
     }
-    public static String EuroCalculateChange(int convertedChange) {
+    public String euroCalculateChange(int convertedChange) {
         // Determine how many times the given value is divisible by 200 etc
         // initialize variables
         int remainder;

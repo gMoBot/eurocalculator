@@ -13,7 +13,7 @@ public class ChangeCalculatorTest {
         // setup
         ChangeCalculator changeCalculator = new ChangeCalculator();
         // action
-        String coinMessage = changeCalculator.CalculateChange(0);
+        String coinMessage = changeCalculator.calculateChange(0);
         // assert
         assertEquals("0 Quarters + 0 Dimes + 0 Nickels + 0 Pennies = 0 Coins", coinMessage);
     }
@@ -23,7 +23,7 @@ public class ChangeCalculatorTest {
         // setup
         ChangeCalculator changeCalculator = new ChangeCalculator();
         // action
-        String coinMessage = changeCalculator.CalculateChange(1);
+        String coinMessage = changeCalculator.calculateChange(1);
         // assert
         assertEquals("0 Quarters + 0 Dimes + 0 Nickels + 1 Pennies = 1 Coins", coinMessage);
     }
@@ -32,7 +32,7 @@ public class ChangeCalculatorTest {
         // setup
         ChangeCalculator changeCalculator = new ChangeCalculator();
         // action
-        String coinMessage = changeCalculator.CalculateChange(5);
+        String coinMessage = changeCalculator.calculateChange(5);
         // assert
         assertEquals("0 Quarters + 0 Dimes + 1 Nickels + 0 Pennies = 1 Coins", coinMessage);
     }
@@ -41,7 +41,7 @@ public class ChangeCalculatorTest {
         // setup
         ChangeCalculator changeCalculator = new ChangeCalculator();
         // action
-        String coinMessage = changeCalculator.CalculateChange(10);
+        String coinMessage = changeCalculator.calculateChange(10);
         // assert
         assertEquals("0 Quarters + 1 Dimes + 0 Nickels + 0 Pennies = 1 Coins", coinMessage);
     }
@@ -50,7 +50,7 @@ public class ChangeCalculatorTest {
         // setup
         ChangeCalculator changeCalculator = new ChangeCalculator();
         // action
-        String coinMessage = changeCalculator.CalculateChange(25);
+        String coinMessage = changeCalculator.calculateChange(25);
         // assert
         assertEquals("1 Quarters + 0 Dimes + 0 Nickels + 0 Pennies = 1 Coins", coinMessage);
     }
@@ -59,7 +59,7 @@ public class ChangeCalculatorTest {
         // setup
         ChangeCalculator changeCalculator = new ChangeCalculator();
         // action
-        String coinMessage = changeCalculator.CalculateChange(6);
+        String coinMessage = changeCalculator.calculateChange(6);
         // assert
         assertEquals("0 Quarters + 0 Dimes + 1 Nickels + 1 Pennies = 2 Coins", coinMessage);
     }
@@ -68,7 +68,7 @@ public class ChangeCalculatorTest {
         // setup
         ChangeCalculator changeCalculator = new ChangeCalculator();
         // action
-        String coinMessage = changeCalculator.CalculateChange(9);
+        String coinMessage = changeCalculator.calculateChange(9);
         // assert
         assertEquals("0 Quarters + 0 Dimes + 1 Nickels + 4 Pennies = 5 Coins", coinMessage);
     }
@@ -77,7 +77,7 @@ public class ChangeCalculatorTest {
         // setup
         ChangeCalculator changeCalculator = new ChangeCalculator();
         // action
-        String coinMessage = changeCalculator.CalculateChange(11);
+        String coinMessage = changeCalculator.calculateChange(11);
         // assert
         assertEquals("0 Quarters + 1 Dimes + 0 Nickels + 1 Pennies = 2 Coins", coinMessage);
     }
@@ -86,7 +86,7 @@ public class ChangeCalculatorTest {
         // setup
         ChangeCalculator changeCalculator = new ChangeCalculator();
         // action
-        String coinMessage = changeCalculator.CalculateChange(14);
+        String coinMessage = changeCalculator.calculateChange(14);
         // assert
         assertEquals("0 Quarters + 1 Dimes + 0 Nickels + 4 Pennies = 5 Coins", coinMessage);
     }
@@ -95,7 +95,7 @@ public class ChangeCalculatorTest {
         // setup
         ChangeCalculator changeCalculator = new ChangeCalculator();
         // action
-        String coinMessage = changeCalculator.CalculateChange(19);
+        String coinMessage = changeCalculator.calculateChange(19);
         // assert
         assertEquals("0 Quarters + 1 Dimes + 1 Nickels + 4 Pennies = 6 Coins", coinMessage);
     }
@@ -104,7 +104,7 @@ public class ChangeCalculatorTest {
         // setup
         ChangeCalculator changeCalculator = new ChangeCalculator();
         // action
-        String coinMessage = changeCalculator.CalculateChange(29);
+        String coinMessage = changeCalculator.calculateChange(29);
         // assert
         assertEquals("1 Quarters + 0 Dimes + 0 Nickels + 4 Pennies = 5 Coins", coinMessage);
     }
@@ -113,7 +113,7 @@ public class ChangeCalculatorTest {
         // setup
         ChangeCalculator changeCalculator = new ChangeCalculator();
         // action
-        String coinMessage = changeCalculator.CalculateChange(44);
+        String coinMessage = changeCalculator.calculateChange(44);
         // assert
         assertEquals("1 Quarters + 1 Dimes + 1 Nickels + 4 Pennies = 7 Coins", coinMessage);
     }
@@ -122,7 +122,7 @@ public class ChangeCalculatorTest {
         // setup
         ChangeCalculator changeCalculator = new ChangeCalculator();
         // action
-        String coinMessage = changeCalculator.CalculateChange(100);
+        String coinMessage = changeCalculator.calculateChange(100);
         // assert
         assertEquals("4 Quarters + 0 Dimes + 0 Nickels + 0 Pennies = 4 Coins", coinMessage);
     }

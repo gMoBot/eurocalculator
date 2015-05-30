@@ -17,9 +17,13 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Greedy {
 
     public static void main(String[] varArgs) {
-
-        new Greedy().GetChange();
+        ApplicationContext context = new ClassPathXmlApplicationContext("application.xml");
+        Greedy greedy = (Greedy) context.getBean("greedy");
+        greedy.GetChange();
+//        new Greedy().GetChange();
     }
+    private final ChangeCalculator changeCalculator;
+    public Greedy(ChangeCalculator changeCalculator) {this.changeCalculator = changeCalculator;}
 
     // Solicit and validate user input
     public void GetChange() {
@@ -50,12 +54,14 @@ public class Greedy {
         ApplicationContext context = new ClassPathXmlApplicationContext("application.xml");
 
         if (currencyType.matches("[\\$]")) {
-            ChangeCalculator uSChange = (ChangeCalculator) context.getBean("dollars");
-            uSChange.CalculateChange(convertedChange);
+            changeCalculator.calculateChange(convertedChange);
+//            ChangeCalculator uSChange = (ChangeCalculator) context.getBean("dollars");
+//            uSChange.calculateChange(convertedChange);
 
         } else if (currencyType.matches("[\\€]")) {
-            ChangeCalculator eUChange = (ChangeCalculator) context.getBean("euros");
-            eUChange.EuroCalculateChange(convertedChange);
+            changeCalculator.euroCalculateChange(convertedChange);
+//            ChangeCalculator eUChange = (ChangeCalculator) context.getBean("euros");
+//            eUChange.euroCalculateChange(convertedChange);
         }
         else
             System.out.println("currency type does not match");
